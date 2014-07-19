@@ -59,3 +59,6 @@ group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
 end
+
+gem 'high_voltage', '~> 2.2.0'
+
