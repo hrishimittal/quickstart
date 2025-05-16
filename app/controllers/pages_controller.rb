@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  before_action :set_page, only: [:show, :edit, :update, :destroy]
+  before_action :set_page, only: %i[ show edit update destroy ]
+  before_action :require_admin, except: %i[ show ]
 
   def index
     @pages = Page.all
@@ -45,5 +46,11 @@ class PagesController < ApplicationController
 
   def page_params
     params.require(:page).permit(:title, :content, :slug)
+  end
+
+  def require_admin
+    unless current_user&.admin?
+      redirect_to root_path, alert: "You must be an admin to access this page."
+    end
   end
 end

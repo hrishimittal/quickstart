@@ -1,9 +1,11 @@
 <div class="space-y-4">
   <div class="flex justify-between items-center">
     <h1 class="text-2xl font-bold"><%= @page.title %></h1>
-    <div class="space-x-2">
-      <%= link_to 'Edit', edit_page_path(@page), class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" %>
-    </div>
+    <% if current_user&.admin? %>
+      <div class="space-x-2">
+        <%= link_to 'Edit', edit_page_path(@page.slug), class: "text-blue-500 hover:text-blue-600" %>
+      </div>
+    <% end %>
   </div>
 
   <div class="prose max-w-none">
