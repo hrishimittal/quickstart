@@ -6,3 +6,5 @@ Quickstart is a skeleton Rails 8 app with all the stuff I normally use in my app
 * PostgreSQL
 * Tailwind CSS
 * Devise for user authentication
+* Pages
+

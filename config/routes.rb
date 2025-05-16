@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     sign_in: 'login',
     sign_out: 'logout'
   }
-  root 'pages#index'
+  root 'pages#show', id: 'home'
   resources :pages
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
