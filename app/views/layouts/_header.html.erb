@@ -1,0 +1,13 @@
+<header class="bg-white shadow">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <div class="text-xl font-bold">Quickstart</div>
+    <div class="space-x-4">
+      <% if user_signed_in? %>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "text-gray-600 hover:text-gray-900" %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class: "text-gray-600 hover:text-gray-900" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "text-gray-600 hover:text-gray-900" %>
+      <% end %>
+    </div>
+  </div>
+</header> 

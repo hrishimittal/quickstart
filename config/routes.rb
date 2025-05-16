@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     sign_in: 'login',
     sign_out: 'logout'
   }
+  root 'pages#index'
+  resources :pages
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
